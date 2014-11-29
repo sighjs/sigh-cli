@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+var fs = require('fs')
+var path = require('path')
+
+function main() {
+  var argv = require('yargs')
+    .usage('$0 [args]')
+    .boolean('w')
+    .alias('w', 'watch')
+    .describe('w', 'watch files for changes')
+    .help('help')
+    .alias('h', 'help')
+    .describe('h', 'show this help')
+    .argv
+
+  argv.pipelines = argv._
+  delete argv._
+
+  var cwd = process.cwd()
+  while (! fs.existsSync('Sigh.js')) {
+    if (cwd === '/') {
+      console.warn('Could not find Sigh.js')
+      process.exit(1)
+    }
+    process.chdir('..')
+    cwd = process.cwd()
+  }
+
+  var sigh = require(path.join(cwd, 'node_modules', 'sigh'))
+  sigh.invoke(argv)
+}
+
+main()

@@ -1,0 +1,32 @@
+{
+  "name": "sigh-cli",
+  "version": "0.0.1",
+  "description": "Client for sigh asset pipelines",
+  "bin": {
+    "sigh": "./bin/sigh"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sighjs/sigh.git"
+  },
+  "keywords": [
+    "build",
+    "assets",
+    "pipeline"
+  ],
+  "author": "James Pike <github@chilon.net>",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/sighjs/sigh/issues"
+  },
+  "dependencies": {
+    "mercator": "^0.1.9",
+    "yargs": "^1.3.3"
+  },
+  "peerDependencies": {
+    "sigh": "0.*"
+  }
+}
