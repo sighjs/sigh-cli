@@ -14,7 +14,7 @@ function main() {
     .default('e', 'development')
     .alias('j', 'jobs')
     .describe('j', 'number of worker subprocesses to spawn')
-    .default('j', 4) // TODO: default to number of CPU cores
+    .default('j', 2) // TODO: default to number of CPU cores - 1?
     .count('v')
     .alias('v', 'verbose')
     .describe('v', 'increase verbosity')
