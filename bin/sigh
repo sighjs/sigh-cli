@@ -12,6 +12,12 @@ function main() {
     .alias('e', 'environment')
     .describe('e', 'specify environment')
     .default('e', 'development')
+    .alias('j', 'jobs')
+    .describe('j', 'number of worker subprocesses to spawn')
+    .default('j', 4) // TODO: default to number of CPU cores
+    .count('v')
+    .alias('v', 'verbose')
+    .describe('v', 'increase verbosity')
     .boolean('w')
     .alias('w', 'watch')
     .describe('w', 'watch files for changes')
