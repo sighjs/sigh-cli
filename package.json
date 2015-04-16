@@ -1,6 +1,6 @@
 {
   "name": "sigh-cli",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Client for sigh asset pipelines",
   "bin": {
     "sigh": "./bin/sigh"
@@ -23,7 +23,7 @@
     "url": "https://github.com/sighjs/sigh/issues"
   },
   "dependencies": {
-    "yargs": "~1.3.3"
+    "yargs": "~3.7.2"
   },
   "peerDependencies": {
     "sigh": "0.*"
