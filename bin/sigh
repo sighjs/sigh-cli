@@ -27,9 +27,9 @@ function main() {
   delete argv._
 
   var cwd = process.cwd()
-  while (! fs.existsSync('Sigh.js')) {
+  while (! fs.existsSync('sigh.js') && ! fs.existsSync('Sigh.js')) {
     if (cwd === '/') {
-      console.warn('Could not find Sigh.js')
+      console.warn('Could not find sigh.js')
       process.exit(1)
     }
     process.chdir('..')
