@@ -45,8 +45,7 @@ function main() {
   delete argv._
 
   if (sigh) {
-    var success = sigh.invoke(argv)
-    process.exit(success ? 0 : -1)
+    return sigh.invoke(argv).catch(process.exit.bind(null, 1))
   }
   else {
     console.warn('Could not find sigh.js')
