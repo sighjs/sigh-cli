@@ -4,8 +4,10 @@ var fs = require('fs')
 var path = require('path')
 
 function main() {
+  var cwdAtInit = process.cwd()
+
   var sighPath
-  for (var cwd = process.cwd(); cwd !== '/'; process.chdir('..'), cwd = process.cwd()) {
+  for (var cwd = cwdAtInit; cwd !== '/'; process.chdir('..'), cwd = process.cwd()) {
     if (fs.existsSync('sigh.js') || fs.existsSync('Sigh.js')) {
       sighPath = path.join(cwd, 'node_modules', 'sigh')
       break
@@ -33,6 +35,8 @@ function main() {
     .alias('j', 'jobs')
     .describe('j', 'number of worker subprocesses to spawn')
     .default('j', 3) // TODO: default to number of CPU cores - 1?
+    .alias('p', 'plugin')
+    .describe('p', 'create new plugin')
     .count('v')
     .alias('v', 'verbose')
     .describe('v', 'increase verbosity')
@@ -40,6 +44,18 @@ function main() {
     .alias('w', 'watch')
     .describe('w', 'watch files for changes')
     .argv
+
+  if (argv.plugin) {
+    process.chdir(cwdAtInit)
+    var plugin = require('../lib/plugin.js')
+    return plugin.create(argv.plugin).then(
+      process.exit.bind(process, 0),
+      function(err) {
+        console.warn(err)
+        process.exit.bind(process, 1)
+      }
+    )
+  }
 
   argv.pipelines = argv._
   delete argv._
