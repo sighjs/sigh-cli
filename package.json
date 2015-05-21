@@ -1,6 +1,6 @@
 {
   "name": "sigh-cli",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Client for sigh asset pipelines",
   "bin": {
     "sigh": "./bin/sigh"
