@@ -25,7 +25,9 @@
   "dependencies": {
     "bluebird": "^2.9.25",
     "ensureDir": "^1.0.6",
+    "generator-sigh-plugin": "^0.1.1",
     "xdg": "^0.1.1",
-    "yargs": "~3.7.2"
+    "yargs": "~3.7.2",
+    "yeoman-environment": "^1.2.5"
   }
 }
