@@ -1,6 +1,6 @@
 {
   "name": "sigh-cli",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "description": "Client for sigh asset pipelines",
   "bin": {
     "sigh": "./bin/sigh"
@@ -25,7 +25,7 @@
   "dependencies": {
     "bluebird": "^2.9.25",
     "ensureDir": "^1.0.6",
-    "generator-sigh-plugin": "^0.1.1",
+    "generator-sigh-plugin": "^0.2.2",
     "xdg": "^0.1.1",
     "yargs": "~3.7.2",
     "yeoman-environment": "^1.2.5"
